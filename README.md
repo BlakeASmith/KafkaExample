@@ -1,4 +1,10 @@
-# A word-count program using Apache-Kafka in Docker
+# A word-count program using Apache-Kafka
+
+This is an example program showing how to make a producer for Kofka 
+and consume the produced data using the Kofka streams API. 
+
+The program requests text blocks from https://baconipsum.com/ and counts the
+words. Finally it outputs the most common word for each generated text block.
 
 We use the *spotify/kafka* docker image to run Kafka and Zookeeper in 
 the same container
