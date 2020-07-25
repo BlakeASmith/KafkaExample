@@ -54,6 +54,9 @@ java -jar ./KotlinExample/build/libs/KotlinExample-1.0-all.jar
 The output will look like
 
 ```
+running with bootstrap server 127.0.0.1:9092
+to change bootstrap server set the BOOTSTRAP_CONFIG environment variable
+using application id kotlin-example, to change this set the APPLICATION_ID_CONFIG environment variable
 ...
 3ae8b4e5-00fb-4994-9606-1d198c7adeeb, (pork, 11.0)
 b25d16c2-c864-413f-82ea-b93606e79fcc, (beef, 7.0)
