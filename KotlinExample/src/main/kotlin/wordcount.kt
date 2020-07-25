@@ -59,8 +59,11 @@ fun getBaconIpsum() =
         .let { ProducerRecord(TEXT_TOPIC, UUID.randomUUID().toString(), it) }
 
 // send some random baconipsum text every 100ms
-fun produceBaconIpsum(textProducer: KafkaProducer<String, String>) {
-    generateSequence(::getBaconIpsum).forEach { textProducer.send(it) }
+suspend fun produceBaconIpsum(textProducer: KafkaProducer<String, String>, delay: Long) {
+    generateSequence(::getBaconIpsum).forEach {
+        textProducer.send(it)
+        delay(delay)
+    }
 }
 
 val streams = KafkaStreams(sb.build(), props)
